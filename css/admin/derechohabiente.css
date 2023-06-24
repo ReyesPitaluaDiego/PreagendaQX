@@ -1,0 +1,178 @@
+@import url("admin_index.css");
+a{
+    display: block;
+    text-decoration: none;
+    color: #333;
+}
+nav{
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    top: 22vh;
+}
+.header3{
+    height: 8vh;
+    border-bottom: 3px #EEEEEE solid;
+}
+.contnav1{
+    font-size: 16px;
+    color: #a61c3c;
+}
+.contnav2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+    gap: 10px;
+}
+.contnav2 a{
+    border-radius: 8px;
+    padding: 8px 20px;
+    transition: all .5s;
+}
+.btn_registro{
+    border: 1px #a61c3c solid;
+    background-color: #a61c3c;
+    color: whitesmoke;
+}
+.btn_reportes, .btn_regresar, .btn_registro2{
+    border: 1px #333 solid;
+}
+.fa-plus, .fa-file-medical, .fa-arrow-left{
+    transform: scale(1);
+    transition: all .3s;
+}
+.btn_registro:hover .fa-plus{
+    transform: scale(1.5);
+    color: white;
+}
+.btn_registro2:hover {
+    color: white;
+    background-color: #a61c3c;
+    border: 1px #a61c3c solid;
+}
+.btn_registro2:hover .fa-plus{
+    transform: scale(1.5);
+    color: white;
+}
+.btn_reportes:hover .fa-file-medical{
+    transform: scale(1.3);
+    color: #333;
+}
+.btn_regresar:hover .fa-arrow-left{
+    transform: scale(1.5);
+    color: #333;
+    margin-right: 10px;
+}
+.icon_nav{
+    margin-right: 5px;
+}
+th{
+    background-color: #EEEEEE !important;
+}
+td{
+    white-space: nowrap;
+    text-align: left;
+}
+.fijo_head{
+    color: #a61c3c;
+}
+.fijo_body{
+    font-weight: bold;
+    text-align: center;
+}
+.fijo_body2{
+    font-weight: bold;
+}
+.contenedor_tabla{
+    max-width: fit-content;
+}
+tr td .btn_accion{
+    color: white;
+    background-color: #007b5f;
+    text-align: center;
+    margin: 0px 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+tr td .btn_accion:hover{
+    text-decoration: underline;
+}
+tr td .btn_accion_delete{
+    color: white;
+    background-color: #a61c3c;
+    text-align: center;
+    margin: 0px 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+tr td .btn_accion_delete:hover{
+    text-decoration: underline;
+}
+.btn_excel{
+    color: white;
+    padding: 10px 15px;
+    background-color: #007b5f;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+.btn_excel i{
+    font-size: 25px;
+}
+.dataTable {
+    border-collapse: collapse !important;
+}
+.dataTables_wrapper .dataTables_filter input {
+    border: 1px solid #333 !important;
+    border-radius: 8px !important;
+    padding: 10px 5px !important;
+    font-size: 16px !important;
+    margin-left: 8px !important;
+    margin-bottom: 8px !important;
+}
+.contenedor_reportes{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 3%;
+}
+.form_buscarfchs{
+    width: 27%;
+    height: 60vh;
+    border: 1px #ccc solid;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.form_buscarfchs .btn_registro{
+    width: 100%;
+    cursor: pointer;
+    height: 53.5px;
+    color: white;
+    border: none;
+    font-weight: bold;
+    background-size: 300%;
+    background-image: linear-gradient(
+    to left,
+    #15C437,
+    #48E247,
+    #15C437
+    );
+    transition: all .5s;
+}
+.contenedor_tabla_reporte{
+    width: 70%;
+}
+@media screen and (max-width:1920px){
+    .contenedor_tabla{
+        margin: auto;
+        overflow: hidden;
+    }
+}

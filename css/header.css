@@ -1,0 +1,127 @@
+/* ----------> HEADER */
+header{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 999;
+}
+.contenedordemenu{
+    height: 70vh;
+}
+.header1{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 14vh;
+    background-color: white;
+}
+.header1 .contenido_hed1{
+    width: 33%;
+    height: fit-content;
+}
+.header1 .contenido_hed1 img{
+    height: 81px;
+}
+.cont1{
+    padding-left: 5%;
+}
+.cont2{
+    font-size: 18px;
+    text-align: center;
+}
+.cont3{
+    padding-right: 5%;
+    text-align: right;
+}
+.header2{
+    background-color: #EEEEEE;
+    height: 8vh;
+}
+.header2 i{
+    font-size: 35px;
+    color: #333;
+}
+.cont3 a i:hover{
+    color: #a61c3c;
+}
+.tipo_perfil{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    line-height: 18px;
+    text-align: center;
+    position: relative;
+}
+.tipo_perfil .icon_open:hover{
+    color: #a61c3c;
+    cursor: pointer;
+}
+.fecha{
+    font-size: 16px;
+}
+.usuario_contraseña{
+    position: absolute;
+    top: 100%;
+    left: 5%;
+    background-color: #EEEEEE;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding: 20px 10px;
+    display: none;
+}
+.usuario_contraseña a{
+    color: #333;
+}
+.usuario_contraseña a:hover{
+    color: #a61c3c;
+    text-decoration: underline;
+}
+/* ----------> HEADER The end */
+
+/* ----------> FOOTER */
+footer{
+    width: 100%;
+    background-color: #12322B;
+    font-weight: lighter;
+    font-size: 14px;
+    padding-top: 20px;
+}
+.cont_footer{
+    width: 100%;
+    color: #ccc;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.cont1_footer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-grow: 1;
+}
+.linea{
+    border: 1px #ccc solid;
+    height: 100px;
+    margin: 0px 30px;
+    border-radius: 5px;
+}
+.footer-pleca{
+    margin-top: 20px;
+    width: 100%;
+    height: 30px;
+    background-image: url(https://framework-gb.cdn.gob.mx/landing/img/pleca.svg);
+    background-repeat: repeat-x;
+}
+.logo_footer{
+    background-image: url(../img/logo_footer.png);
+    background-size: cover;
+    width: 230px;
+    height: 68px;
+}
+/* ----------> FOOTER The end */

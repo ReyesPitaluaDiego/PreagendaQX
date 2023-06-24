@@ -1,0 +1,74 @@
+@import url("admin/registro_dh.css");
+
+.aux_contform_2{
+    padding-top: 32px;
+}
+.form_row7{
+    width: 100%;
+}
+.form_row7 input, .form_row8 input, .form_row8 select, .form_row9 input, .form_row50 input, .form_rowch input, .form_rowm input, .form_rowg input, .form_rowxg input, .form_rowxg select{
+    width: 100%;
+}
+.form_row8{
+    flex-grow: 1;
+}
+.form_row9{
+    width: 23%;
+}
+
+.form_row50{
+    width: 50%;
+}
+.form_rowch{
+    width: 8%;
+}
+.form_rowm{
+    width: 12%;
+}
+.form_rowg{
+    width: 15%;
+}
+.form_rowxg{
+    width: 20%;
+}
+.separador{
+    border: 1px dotted #333;
+    margin: 30px 0px;
+}
+
+/* CONSENTIMIENTOS */
+.cont_carta{
+    border-top: 2px #333 solid;
+    padding-top: 50px;
+    margin-top: 50px;
+}
+.parte_cuerpo{
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+/* BANCO DE SANGRE */
+.separador2{
+    border: 1px solid #333;
+    margin-bottom: 30px;
+}
+.concepto_s1{
+    font-weight: normal;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.concepto_s{
+    font-weight: normal;
+    padding-bottom: 10px;
+}
+
+/* SOLICITUD DE ANALISIS */
+table{
+    border-collapse: collapse;
+    /* width: 100%; */
+    margin: auto;
+}
+tbody td{
+    width: max-content;
+    padding: 5px 50px;
+}

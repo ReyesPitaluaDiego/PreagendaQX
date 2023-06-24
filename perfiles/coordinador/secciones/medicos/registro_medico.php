@@ -1,0 +1,149 @@
+<?php
+    require "../../../../seguridad.php";
+    require "../../../../bd.php";
+
+    $NoEMPLEADO = $_SESSION['NoEMPLEADO'];
+    $consulta= "SELECT * FROM coordinadores WHERE NoEMPLEADO='$NoEMPLEADO'";
+    $resultado= mysqli_query($conexion,$consulta);
+    $fila = mysqli_fetch_assoc($resultado);
+    $area= $fila['COORDINACION'];
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../../css/header.css">
+    <link rel="stylesheet" href="../../../../css/admin/registro_coor.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="../../../../libs/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="../../../../libs/fontawesome/css/solid.min.css">
+    <title>Registro de médicos</title>
+</head>
+<body>
+    <?php
+     include "../../header.php";
+    ?>
+    <nav class="header1 header3">
+        <div class="contenido_hed1"></div>
+        <div class="contenido_hed1 cont2 contnav1"><h1>MÉDICOS</h1></div>
+        <div class="contenido_hed1 cont3 contnav2">
+            <a href="medicos.php" class="btn_regresar"><i class="fa-solid fa-arrow-left icon_nav"></i>Regresar</a>
+        </div>
+    </nav>
+    <section class="top"></section>
+    <br>
+    <!-- FORMULARIO DE REGISTRO -->
+    <form id="form_registro" name="form_registro" class="form_registro ancho1" action="../../../../crud/create_medico.php" method="post">
+        <div class="contform_3">
+            <p class="titulo_form">Datos del médico</p>
+            <input type="text" name="usuario" id="usuario" value="Medico" hidden>
+            <input type="text" name="contrasenia" id="contrasenia" value="isssteMIDmx" hidden>
+            <!-- ---------------------------------------------------------- -->
+            <div class="form_group">
+                <label for="noempleado" class="form_row8">No. Empleado: <span class="rojo">*</span><br>
+                    <input type="text" name="noempleado" id="noempleado" maxlength="6" onkeyup="mayus(this);">
+                </label>
+                <label for="cedula_p" class="form_row8_8">Cédula profesional: <span class="rojo">*</span><br>
+                    <input type="text" name="cedula_p" id="cedula_p" maxlength="10" onkeyup="mayus(this);">
+                </label>
+                <label for="cedula_e" class="form_row8_8">Cédula especialidad: <span class="rojo">*</span><br>
+                    <input type="text" name="cedula_e" id="cedula_e" maxlength="10" onkeyup="mayus(this);">
+                </label>
+            </div>
+            <!-- ---------------------------------------------------------- -->
+            <div class="form_group">
+                <label for="nombre" class="form_row9">Nombre(s): <span class="rojo">*</span><br>
+                    <input type="text" name="nombre" id="nombre" onkeyup="capitalice(this);">
+                </label>
+                <label for="apellido1" class="form_row10">Apellido paterno: <span class="rojo">*</span><br>
+                    <input type="text" name="apellido1" id="apellido1" onkeyup="capitalice(this);">
+                </label>
+                <label for="apellido2" class="form_row10">Apellido materno:<br>
+                    <input type="text" name="apellido2" id="apellido2" onkeyup="capitalice(this);">
+                </label>
+            </div>
+            <!-- ---------------------------------------------------------- -->
+            <div class="form_group">
+                <label for="curp" class="form_row11">CURP: <span class="rojo">*</span><br>
+                    <input type="text" name="curp" id="curp" maxlength="18" onkeyup="mayus(this);">
+                </label>
+                <label for="sexo">Sexo: <span class="rojo">*</span><p class="aux2">|</p>
+                    <label><input type="radio" name="sexo" id="sexo" value="H"><span class="aux"> Hombre</span></label>
+                    <label><input type="radio" name="sexo" id="sexo" value="M"><span class="aux"> Mujer</span></label>
+                </label>
+            </div>
+            <!-- ---------------------------------------------------------- -->
+            <div class="form_group">
+                <label for="especialidad" class="form_row12">Especialidad: <span class="rojo">*</span><br>
+                    <input type="text" name="especialidad" id="especialidad" onkeyup="capitalice(this);">
+                </label>
+                <label for="area">Área: <span class="rojo">*</span><br>
+                    <input type="text" readonly name="area" id="area" value="<?php echo $area; ?>">
+                </label>
+            </div>
+            <!-- ---------------------------------------------------------- -->
+            <div class="form_group">
+                <input type="button" value="Registrar" class="btn_registro" onclick="validacion()">
+            </div>
+        </div>
+    </form>
+
+    <!-- Funciones JS -->
+    <script>
+        function validacion(){
+            if(document.form_registro.noempleado.value.length == 0){
+                document.form_registro.noempleado.focus()
+                return 0;
+            } else {
+                if(document.form_registro.noempleado.value.length <6){
+                alert("No. Empleado incompleto\nDebe llevar 6 caracteres.")
+                document.form_registro.noempleado.focus()
+                return 0;
+                }
+            }
+            if(document.form_registro.cedula_p.value.length == 0){
+                document.form_registro.cedula_p.focus()
+                return 0;
+            }
+            if(document.form_registro.cedula_e.value.length == 0){
+                document.form_registro.cedula_e.focus()
+                return 0;
+            }
+            if(document.form_registro.nombre.value.length == 0){
+                document.form_registro.nombre.focus()
+                return 0;
+            }
+            if(document.form_registro.apellido1.value.length == 0){
+                document.form_registro.apellido1.focus()
+                return 0;
+            }
+            if(document.form_registro.curp.value.length == 0){
+                document.form_registro.curp.focus()
+                return 0;
+            } else {
+                if(document.form_registro.curp.value.length < 18){
+                alert("Verifique la CURP (18 caracteres en total).")
+                document.form_registro.curp.focus()
+                return 0;
+                }
+            }
+            if(document.form_registro.sexo.value !="H" && document.form_registro.sexo.value !="M"){
+                alert("Seleccione un sexo.")
+                document.form_registro.sexo.focus()
+                return 0;
+            }
+            if(document.form_registro.especialidad.value.length == 0){
+                document.form_registro.especialidad.focus()
+                return 0;
+            }
+            if(document.form_registro.area.value == 0){
+                document.form_registro.area.focus()
+                return 0;
+            }
+            document.form_registro.submit();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+@import url("derechohabiente.css");
+
+.buscador_registro{
+    text-align: center;
+}
+.buscador_registro label{
+    font-weight: bold;
+}
+.buscador_registro label input{
+    border-radius: 15px;
+    /* border: none; */
+    border: 1px #ccc solid;
+    color: #333;
+    font-size: 14px;
+    padding: 8px 20px;
+    width: 255px;
+    text-align: center;
+    margin-top: 8px;
+}
+.cont_dad_reportes{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 25px;
+    /* border: 1px red solid; */
+}
+.cont_reportes1, .cont_reportes2{
+    width: 50%;
+    /* border: 1px blue solid; */
+}
+.btn_reporte{
+    position: relative;
+    border: 1px #a61c3c solid;
+    border-radius: 8px;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    background-size: 300%;
+    background-image: linear-gradient(
+    to left,
+    #a61c3c 50%,
+    #FFFFFF 50%
+    );
+    transition: all .9s;
+}
+.btn_reporte i{
+    position: absolute;
+    top: calc(50% - 11.5px);
+    right: 30px;
+    font-size: 23px;
+    transition: all .5s;
+}
+.btn_reporte:hover{
+    background-position: right;
+    color: #FFFFFF;
+}
+.btn_reporte:hover i{
+    right: 10px;
+    color: #FFFFFF;
+}

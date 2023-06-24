@@ -1,0 +1,72 @@
+@import url("registro_dh.css");
+
+.contform_3{
+    max-width: 800px;
+    margin: auto;
+    border-radius: 15px;
+    background-color: #f8f8f8;
+    border: 1px #ccc solid;
+    box-shadow: 0px 0px 10px #ccc;
+    padding: 30px;
+}
+.contform_4{
+    width: 700px;
+}
+.form_row8 input, .form_row8_8 input, .form_row9 input, .form_row10 input, .form_row11 input, .form_row12 input {
+    width: 100%;
+}
+.form_row8{
+    width: 22%;
+}
+.form_row8_8, .form_row9, .form_row11, .form_row12{
+    flex-grow: 1;
+}
+.form_row10{
+    width: 28%;
+}
+
+/* Registro - Área */
+.modal, .modal2{
+    position: fixed;
+    top: 22vh;
+    left: 0;
+    width: 100%;
+    height: 78vh;
+    background-color: rgba(0, 0, 0, .7);
+    z-index: 99;
+    display: none;
+}
+.form_modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+}
+.contform_modal{
+    width: 500px;
+    margin: auto;
+    border-radius: 15px;
+    background-color: #f8f8f8;
+    box-shadow: 0px 0px 5px #ccc;
+    padding: 30px;
+    position: relative;
+}
+.circulo{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    transition: all .5s;
+}
+.circulo:hover{
+    background-color: #a61c3c;
+}
